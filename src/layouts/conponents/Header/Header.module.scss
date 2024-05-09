@@ -1,0 +1,155 @@
+.wrapper {
+    --seach-border-radius: 92px;
+    --seach-height: 46px;
+    --seach-top-spacer: 9px;
+    --seach-buttom-width: 52px;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+    height: var(--default-layout-header-height);
+    box-shadow: 0px 1px 1px rgb(0 0 0 / 12%);
+    background-color: #fff;
+    justify-content: center;
+    display: flex;
+}
+
+.inner {
+    padding: 0 var(--default-layout-header-height);
+    height: 100%;
+    width: var(--default-layout-width);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo-link {
+    display: flex;
+}
+
+.seach,
+.seach-result {
+    width: 361px;
+}
+
+.seach {
+    position: relative;
+    height: var(--seach-height);
+    padding-left: 16px;
+    display: flex;
+    background-color: rgba(22, 24, 35, 0.06);
+    border-radius: var(--seach-border-radius);
+    border: 1.5px solid transparent;
+
+    input {
+        flex: 1;
+        height: 100%;
+        color: var(--black);
+        font-size: 1.6rem;
+        caret-color: var(--primary);
+        background-color: transparent;
+    }
+
+    input:not(:placeholder-shown) ~ .seach-btn {
+        color: rgba(22, 24, 35, 0.75);
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        width: 1px;
+        height: calc(var(--seach-height) - var(--seach-top-spacer) * 2);
+        top: var(--seach-top-spacer);
+        right: var(--seach-buttom-width);
+        background-color: rgba(22, 24, 35, 0.12);
+    }
+
+    &:focus-within {
+        border-color: rgba(22, 24, 35, 0.2);
+    }
+}
+
+.seach-title {
+    font-size: 1.4rem;
+    padding: 5px 12px;
+    font-weight: 600;
+    color: rgba(22, 24, 35, 0.5);
+}
+.clear,
+.loading {
+    position: absolute;
+    right: calc(var(--seach-buttom-width) + 16px);
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(22, 24, 35, 0.34);
+}
+
+.seach-btn {
+    width: var(--seach-buttom-width);
+    height: 100%;
+    border-top-right-radius: var(--seach-border-radius);
+    border-bottom-right-radius: var(--seach-border-radius);
+    font-size: 1.8rem;
+    color: rgba(22, 24, 35, 0.34);
+
+    &:hover {
+        cursor: pointer;
+        background-color: rgba(22, 24, 35, 0.03);
+    }
+
+    &:active {
+        background-color: rgba(22, 24, 35, 0.06);
+    }
+}
+
+.custom-login {
+    color: rgba(22, 24, 35, 0.75);
+}
+
+//actions
+.actions {
+    display: flex;
+    align-items: center;
+}
+
+.action-btn {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    color: #161823;
+    background-color: transparent;
+    font-size: 2.2rem;
+    padding: 4px 12px;
+    cursor: pointer;
+}
+
+.action-item {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    font-size: 1.4rem;
+    right: 0px;
+    min-width: 26px;
+    height: 18px;
+    background-color: var(--primary);
+    border-radius: 10px;
+}
+
+.more-btn {
+    font-size: 2rem;
+    margin-left: 28px;
+    padding: 4px 8px;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.user-avt {
+    width: 32px;
+    height: 32px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-left: 12px;
+    cursor: pointer;
+}
